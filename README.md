@@ -8,14 +8,14 @@ Les exercices couvrent la création de classes, l’héritage, la surcharge, la 
 
 ---
 
-## Objectifs de l'atelier
+## Structure du Dépôt
 
-Les principaux objectifs de cet atelier sont :
-- Comprendre et appliquer les concepts de la **programmation orientée objet (POO)** en JavaScript.
-- Développer des compétences en **création de sites web interactifs**.
-- Travailler sur des projets réels de développement front-end.
-- Utiliser des outils modernes comme **Git** et **GitHub** pour la gestion de version et la collaboration.
-- Renforcer les compétences en **résolution de problèmes** à travers des exercices pratiques.
+Le dépôt est organisé comme suit :
+- Exercice 1 : Gestion de classes pour des voitures avec héritage et tri.
+- Exercice 2 : Objets natifs Étudiant et Professeur avec tri alphabétique.
+- Exercice 3 : Classes géométriques (Vecteur2D, Rectangle, Carré, Point, Segment) en ES6.
+- Exercice 4 : Mini-blog orienté objet avec conversion JSON.
+- Fichiers associés : Fichiers JavaScript pour la logique, HTML/CSS pour l’affichage (si applicable).
 
 ---
 
