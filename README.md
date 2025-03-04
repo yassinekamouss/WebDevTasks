@@ -1,8 +1,10 @@
-# WebDevTasks - Atelier de développement Web
+# Rapport sur l'Atelier 2 : JavaScript et Programmation Orientée Objet (POO)
 
 ## Introduction
 
-Cet atelier a été conçu pour renforcer les concepts de base du développement web et des technologies associées. L'objectif principal de cet atelier est d'apprendre à implémenter des solutions front-end à travers des exercices pratiques en utilisant JavaScript, HTML, CSS, et d'autres outils pertinents. À travers des exercices de programmation orientée objet (POO), l'atelier a pour but de familiariser les étudiants avec la structure et la gestion d'un projet web, tout en appliquant les meilleures pratiques en développement.
+Ce dépôt GitHub contient les solutions aux exercices de l'Atelier 2, conçu dans le cadre de l’apprentissage de la programmation orientée objet (POO) avec JavaScript. L’objectif principal est de se familiariser avec les concepts fondamentaux de la POO, tels que les classes, l’héritage, la composition, et la manipulation d’objets, tout en exploitant les fonctionnalités modernes d’ECMAScript 6 (ES6). Ce rapport détaille chaque exercice, explique les solutions implémentées, et offre une perspective pédagogique sur les concepts abordés.
+
+Les exercices couvrent la création de classes, l’héritage, la surcharge, la manipulation de données via JSON, et la mise en œuvre d’un mini-blog orienté objet.
 
 ---
 
