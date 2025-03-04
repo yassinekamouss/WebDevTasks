@@ -19,45 +19,83 @@ Le dépôt est organisé comme suit :
 
 ---
 
-## Technologies utilisées
+## Analyse des Exercices
 
-- **HTML** : Structure des pages web.
-- **CSS** : Mise en page et style des éléments.
-- **JavaScript (ES6)** : Logique de l'application et interaction avec les utilisateurs.
-- **Git** et **GitHub** : Gestion de version et partage de code.
+### 1. Exercice 1 : Gestion des Voitures avec Héritage
 
----
+**Objectif** : Créer une classe Voiture et implémenter l’héritage avec Hyundai et Ford, puis trier les instances par année.
 
-## Déroulement de l'atelier
+**Solution :**
+1. Une fonction constructeur Voiture avec les attributs : model, marque, année, type, carburant.
+2. Création d’une liste d’instances de Voiture.
+3. Classes Hyundai (attributs : série, hybride ; méthode : alarmer()) et Ford (attribut : options) héritant de Voiture via extends.
+4. Tri des voitures par année croissante avec sort().
 
-### 1. Exercice 1 : Création d'une page web simple
-Dans cet exercice, les participants sont invités à créer une page web statique en utilisant HTML et CSS. L'objectif est de comprendre la structure de base d'un site web et comment les fichiers HTML et CSS interagissent.
+**Explication Pédagogique :**
+- Cet exercice introduit les bases de la POO : encapsulation (attributs) et héritage (sous-classes).
+- Concept clé : La méthode sort() avec une fonction de comparaison ((a, b) => a.année - b.année) permet un tri efficace.
 
-### 2. Exercice 2 : Introduction à JavaScript et POO
-Cet exercice porte sur l'utilisation de **JavaScript** pour ajouter des comportements dynamiques à la page. En particulier, nous avons exploré la **programmation orientée objet (POO)** en JavaScript. Les concepts fondamentaux comme les **classes**, **objets**, **méthodes** et **constructeurs** ont été utilisés pour implémenter une petite application.
+### 2. Exercice 2 : Étudiants et Professeurs
 
-### 3. Exercice 3 : Développement d'une application interactive
-Dans cette phase, les étudiants ont créé une application front-end interactive utilisant JavaScript. L'application permet de **ajouter, modifier et supprimer des éléments**, offrant ainsi une interaction utilisateur basique mais efficace.
+**Objectif :** Créer des objets Etudiant et Professeur, ajouter des méthodes, et trier les étudiants alphabétiquement.
 
-### 4. Exercice 4 : Utilisation de Git et GitHub
-Cet exercice a permis aux étudiants de se familiariser avec les **systèmes de gestion de version**. En utilisant **Git**, ils ont appris à créer un dépôt local, à ajouter des modifications, à faire des commits, et à pousser leur code vers **GitHub**.
+**Solution :**
+1. Objets Etudiant (attributs : nom, prenom, age, cne) et Professeur (attributs : nom, age, cin).
+2. Méthodes : étudier() pour Etudiant, enseigner() pour Professeur.
+3. Tri des étudiants par nom et prenom avec sort().
 
----
+**Explication Pédagogique :**
+- Cet exercice montre comment ajouter des comportements (méthodes) à des objets.
+- Concept clé : Le tri multi-critères peut être réalisé avec une logique conditionnelle dans sort() (ex. : comparer nom puis prenom si nécessaire).
 
-## Résultats obtenus
+### 3. Exercice 3 : Classes Géométriques en ES6
 
-Les participants ont réussi à compléter les exercices en utilisant les technologies enseignées. Voici quelques résultats clés de l'atelier :
-- Une compréhension plus approfondie de la **POO** en JavaScript, qui a permis de structurer le code de manière plus organisée et réutilisable.
-- La capacité à créer des **applications front-end interactives** qui répondent aux actions de l'utilisateur.
-- Une expérience pratique avec **Git** pour gérer le code de manière collaborative.
+**Objectif :** Définir des classes géométriques avec constructeurs, méthodes, et héritage en ES6
+
+**Solution :**
+1. Classe Vecteur2D :
+    - Constructeur avec x=0, y=0 par défaut.
+    - Méthodes : affichage et addition de vecteurs.
+    - Test : instanciation et affichage de la somme.
+2. Classe Rectangle :
+    - Constructeur avec longueur, largeur par défaut, attribut nom="rectangle".
+    - Méthodes : affichage et calcul de la surface.
+3. Classe Carre :
+    - Hérite de Rectangle, surcharge nom="carré".
+4. Classe Point :
+    - Constructeur avec x=0, y=0.
+5. Classe Segment :
+    - Composition avec deux instances de Point (orig et extrem).
+
+**Explication Pédagogique :**
+- Cet exercice utilise ES6 pour une syntaxe claire (classes, extends).
+- Concept clé : La composition (Segment avec Point) illustre comment combiner des classes pour modéliser des relations complexes.
+
+### 4. Exercice 4 : Mini-Blog Orienté Objet
+
+**Objectif :** Implémenter un mini-blog avec gestion de posts et utilisateurs, en utilisant JSON pour le stockage.
+
+**Solution :**
+1. Classes : User (attributs : nom, etc.) et Post (attributs : titre, description, etc.).
+2. Fonctionnalités : ajout de posts, liste des posts.
+3. Stockage dans un tableau JSON avec conversion classe → JSON (JSON.stringify) et JSON → classe (constructeur personnalisé).
+4. Interface simple pour afficher les posts.
+
+**Explication Pédagogique :**
+- Cet exercice combine POO et gestion de données persistantes via JSON.
+- Concept clé : La sérialisation/désérialisation permet de sauvegarder et restaurer des objets.
+
+**Captures d’écran :**
 
 ---
 
 ## Conclusion
 
-Cet atelier a permis de solidifier les connaissances en développement web, en particulier dans l'utilisation de **JavaScript**, **HTML**, et **CSS**. Les exercices pratiques ont non seulement renforcé les compétences en développement web, mais ont également introduit les concepts de gestion de projet à travers l'utilisation de **Git** et **GitHub**. 
-
-Les participants ont désormais une base solide pour continuer à explorer des projets plus complexes et à perfectionner leurs compétences en développement web.
+Cet atelier a permis de maîtriser les piliers de la POO en JavaScript :
+- **Encapsulation :** Attributs et méthodes dans des classes.
+- **Héritage :** Réutilisation du code entre classes parentes et enfant.
+- **Composition :** Construction d’objets complexes à partir d’autres objets.
+- **ES6 :** Syntaxe moderne pour une meilleure lisibilité.
 
 ---
 
