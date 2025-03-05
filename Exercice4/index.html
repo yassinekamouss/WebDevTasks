@@ -8,62 +8,67 @@
 </head>
 <body class="font-sans text-gray-800">
     <div class="container mx-auto p-5">
-        <div class="flex justify-between items-center py-4 border-b border-gray-300 mb-5">
-            <div class="text-2xl font-bold">CODE <span class="text-indigo-500">WALL</span></div>
-            <div class="flex space-x-3">
-                <button class="px-4 py-2 bg-indigo-500 text-white rounded-md text-sm hover:bg-indigo-600">Home</button>
-                <button class="px-4 py-2 bg-indigo-500 text-white rounded-md text-sm hover:bg-indigo-600">My Blogs</button>
-                <button class="px-4 py-2 bg-indigo-500 text-white rounded-md text-sm hover:bg-indigo-600">Login</button>
-                <button class="px-4 py-2 bg-indigo-500 text-white rounded-md text-sm hover:bg-indigo-600">Sign Up</button>
+        <div class="header flex justify-between items-center py-4 border-b border-gray-300 mb-5">
+            <div class="logo text-2xl font-bold">CODE <span class="text-indigo-600">WALL</span></div>
+            <div class="nav-buttons flex gap-3 items-center">
+                <button id="homeBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Home</button>
+                <button id="myBlogsBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">My Blogs</button>
+                <button id="loginBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Login</button>
+                <button id="signupBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Sign Up</button>
             </div>
         </div>
-
-        <div class="flex justify-between items-center mb-5">
-            <h2 class="text-2xl">Tous les Posts</h2>
-            <button class="px-4 py-2 bg-green-500 text-white rounded-md hover:bg-green-600">Add New Post</button>
+        
+        <div class="blog-header flex justify-between items-center mb-5">
+            <h2 id="postsTitle" class="text-2xl font-semibold">Tous les Posts</h2>
+            <button id="addPostBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">Add New Post</button>
         </div>
-
-        <div id="postsContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
-
+        
+        <div id="postsContainer" class="posts-container grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <!-- Les posts seront insérés ici dynamiquement -->
+        </div>
+        
         <!-- Modal pour l'ajout de post -->
-        <div id="postFormContainer" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-            <div class="bg-white max-w-lg mx-auto mt-20 p-6 rounded-lg relative">
-                <span id="closePostForm" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</span>
-                <h3 class="border-l-4 border-indigo-500 pl-3 mb-5 text-xl font-semibold">Votre Post</h3>
-                <form id="postForm" class="space-y-4">
-                    <input type="text" id="postTitle" placeholder="Title" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <textarea id="postContent" placeholder="Description" class="w-full p-3 border border-gray-300 rounded-md" required></textarea>
-                    <button id="submitPostBtn" type="submit" class="px-6 py-3 bg-indigo-500 text-white rounded-md hover:bg-indigo-600">POST</button>
+        <div id="postFormContainer" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden">    
+            <div class="modal-content bg-white mx-auto my-20 p-5 rounded max-w-xl relative">
+                <span id="closePostForm" class="close absolute top-3 right-3 text-2xl cursor-pointer">&times;</span>
+                <h3 id="formTitle" class="form-title border-l-4 border-indigo-600 pl-3 mb-5 text-xl">Votre Post</h3>
+                <form id="postForm" class="form flex flex-col">
+                    <input type="text" id="postTitle" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Title" required>
+                    <textarea id="postContent" class="mb-4 p-3 border border-gray-300 rounded resize-none" placeholder="Description" required></textarea>
+                    <button id="submitPostBtn" class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700" type="submit">POST</button>
                 </form>
             </div>
-        </div>
 
+        </div>
+        
         <!-- Modal pour la connexion -->
-        <div id="loginModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-            <div class="bg-white max-w-lg mx-auto mt-20 p-6 rounded-lg relative">
-                <span id="closeLoginForm" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</span>
-                <h3 class="border-l-4 border-indigo-500 pl-3 mb-5 text-xl font-semibold">Connexion</h3>
-                <form id="loginForm" class="space-y-4">
-                    <input type="email" id="loginEmail" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <input type="password" id="loginPassword" placeholder="Mot de passe" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <button type="submit" class="px-6 py-3 bg-indigo-500 text-white rounded-md hover:bg-indigo-600">Se connecter</button>
+        <div id="loginModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+            <div class="modal-content bg-white mx-auto my-20 p-5 rounded max-w-xl relative">
+                <span id="closeLoginForm" class="close absolute top-3 right-3 text-2xl cursor-pointer">&times;</span>
+                <h3 class="form-title border-l-4 border-indigo-600 pl-3 mb-5 text-xl">Connexion</h3>
+                <form id="loginForm" class="form flex flex-col">
+                    <input type="email" id="loginEmail" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Email" required>
+                    <input type="password" id="loginPassword" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Mot de passe" required>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700" type="submit">Se connecter</button>
                 </form>
             </div>
         </div>
-
+        
         <!-- Modal pour l'inscription -->
-        <div id="signupModal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50">
-            <div class="bg-white max-w-lg mx-auto mt-20 p-6 rounded-lg relative">
-                <span id="closeSignupForm" class="absolute top-2 right-2 text-2xl cursor-pointer">&times;</span>
-                <h3 class="border-l-4 border-indigo-500 pl-3 mb-5 text-xl font-semibold">Inscription</h3>
-                <form id="signupForm" class="space-y-4">
-                    <input type="text" id="signupUsername" placeholder="Nom d'utilisateur" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <input type="email" id="signupEmail" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <input type="password" id="signupPassword" placeholder="Mot de passe" class="w-full p-3 border border-gray-300 rounded-md" required>
-                    <button type="submit" class="px-6 py-3 bg-indigo-500 text-white rounded-md hover:bg-indigo-600">S'inscrire</button>
+        <div id="signupModal" class="modal fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+            <div class="modal-content bg-white mx-auto my-20 p-5 rounded max-w-xl relative">
+                <span id="closeSignupForm" class="close absolute top-3 right-3 text-2xl cursor-pointer">&times;</span>
+                <h3 class="form-title border-l-4 border-indigo-600 pl-3 mb-5 text-xl">Inscription</h3>
+                <form id="signupForm" class="form flex flex-col">
+                    <input type="text" id="signupUsername" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Nom d'utilisateur" required>
+                    <input type="email" id="signupEmail" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Email" required>
+                    <input type="password" id="signupPassword" class="mb-4 p-3 border border-gray-300 rounded" placeholder="Mot de passe" required>
+                    <button class="px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700" type="submit">S'inscrire</button>
                 </form>
             </div>
         </div>
     </div>
+
+    <script type="module" src="index.js"></script>
 </body>
 </html>

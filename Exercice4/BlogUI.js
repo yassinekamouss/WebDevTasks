@@ -275,6 +275,7 @@ export default class BlogUI {
                 const logoutBtn = document.createElement('button');
                 logoutBtn.id = 'logoutBtn';
                 logoutBtn.textContent = 'Déconnexion';
+                logoutBtn.classList.add('p-2', 'bg-red-500', 'text-white', 'rounded', 'ml-2');
                 logoutBtn.addEventListener('click', () => {
                     this.blogManager.logout();
                     this.updateUI();
