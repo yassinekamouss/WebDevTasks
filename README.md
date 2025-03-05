@@ -87,6 +87,7 @@ Le dépôt est organisé comme suit :
 
 **Captures d’écran :**
 
+![capture d'écran](https://github.com/yassinekamouss/WebDevTasks/blob/e04242617d868a2455efc18d126792900549170d/Capture%20d'%C3%A9cran%202025-03-04%20012545.png)
 ---
 
 ## Conclusion
